@@ -51,7 +51,7 @@ export class App {
         this.modelPath = modelPath;
     }
     mount = async () => {
-        console.log("Appマウント");
+        console.log("AppマウントNoma");
 
         //windowAudioContext構成
         window.AudioContext = window.AudioContext ?? window.webkitAudioContext;
