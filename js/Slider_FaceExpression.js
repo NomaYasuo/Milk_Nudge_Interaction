@@ -7,4 +7,8 @@ class Slider_FaceExpresion{
     TestFunction(point){
         console.log("Point=",point);
     }
+
+    static hello() {
+        console.log("Hello!");
+      }
 }
