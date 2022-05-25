@@ -1,4 +1,4 @@
-class Slider_FaceExpresion{
+class Slider_FaceExpression{
 
     constructor(type) {
         this.type = type;
