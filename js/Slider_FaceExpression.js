@@ -4,11 +4,7 @@ class Slider_FaceExpression{
         this.type = type;
       }
 
-    TestFunction(point){
-        console.log("Point=",point);
+    Point_FaceChange(agent_point,limit){
+        console.log("Point_FaceChange");
     }
-
-    static hello() {
-        console.log("Hello!");
-      }
 }
