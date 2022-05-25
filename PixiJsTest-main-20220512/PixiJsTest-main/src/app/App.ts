@@ -246,6 +246,18 @@ export class App {
             //あいうえお。かきくけこ。
         });
 
+    ////////////////////////////////////////////////////////////////
+
+       //3Dテーブルとのマージ分
+       const slider1 = document.getElementById("item1") as HTMLElement;
+       slider1.addEventListener("input",(event)=>{
+           console.log("typescript_Expression");
+            this.pixiCanvas?.hiyori.setExpression("angry1");
+       });
+////////////////////////////////////////////////////////////////
+
+
+
         //const voiceStop = document.getElementById("voiceStop") as HTMLElement;
         // voiceStop.addEventListener("click", (e: MouseEvent) => {
         //     this.pixiCanvas.hiyori.stopSpeak();
