@@ -11,6 +11,9 @@ export default class IndexLibrary {
     private modelPath: string;
     private modelPosition: ModelPosition;
     private app: App | null;
+    private agent_point: number =0;
+    private limit: number =0;
+
 
     constructor(debug: boolean, serverURL: string, modelPath: string, modelPosition: ModelPosition) {
         this.debug = debug;
@@ -30,6 +33,13 @@ export default class IndexLibrary {
         console.log("アンロード");
         this.app?.unmount();
     };
+
+    set_agentpoint = (point: number) => {
+        this.agent_point = point;
+    }
+    set_limit = (limit: number) => {
+        this.limit = limit;
+    }
 }
 
 //http://localhost:40080
