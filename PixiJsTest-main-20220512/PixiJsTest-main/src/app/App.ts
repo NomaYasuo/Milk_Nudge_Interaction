@@ -255,7 +255,7 @@ export class App {
 
        
 
-       agent_point.addEventListener("change",(event)=>{
+       agent_point.addEventListener("input",(event)=>{
            console.log("typescript_Expression");
            console.log("agent_point",agent_point);
             console.log("limit",limit);
