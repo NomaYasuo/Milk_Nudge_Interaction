@@ -249,13 +249,13 @@ export class App {
     ////////////////////////////////////////////////////////////////
 
        //3Dテーブルとのマージ分
-    //    const slider1 = document.getElementById("item1") as HTMLElement;
+       const slider1 = document.getElementById("item1") as HTMLElement;
        const agent_point = document.getElementById("agent_point") as HTMLElement;
        const limit = document.getElementById("Limit") as HTMLElement;
 
        
 
-       agent_point.addEventListener("input",(event)=>{
+       slider1.addEventListener("input",(event)=>{
            console.log("typescript_Expression");
            console.log("agent_point",agent_point);
             console.log("limit",limit);
