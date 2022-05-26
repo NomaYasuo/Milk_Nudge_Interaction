@@ -249,10 +249,24 @@ export class App {
     ////////////////////////////////////////////////////////////////
 
        //3Dテーブルとのマージ分
-       const slider1 = document.getElementById("item1") as HTMLElement;
-       slider1.addEventListener("input",(event)=>{
+    //    const slider1 = document.getElementById("item1") as HTMLElement;
+       const agent_point = document.getElementById("agent_point") as HTMLElement;
+       const limit = document.getElementById("Limit") as HTMLElement;
+
+       
+
+       agent_point.addEventListener("change",(event)=>{
            console.log("typescript_Expression");
+           console.log("agent_point",agent_point);
+            console.log("limit",limit);
+           if(agent_point<limit){
             this.pixiCanvas?.hiyori.setExpression("angry1");
+           }
+           else{
+            this.pixiCanvas?.hiyori.setExpression("normal1");
+           }
+
+            
        });
 ////////////////////////////////////////////////////////////////
 
