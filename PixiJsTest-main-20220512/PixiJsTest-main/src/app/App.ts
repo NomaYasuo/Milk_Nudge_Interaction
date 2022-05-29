@@ -249,24 +249,24 @@ export class App {
     ////////////////////////////////////////////////////////////////
 
        //3Dテーブルとのマージ分
-       const slider1 = document.getElementById("item1") as HTMLElement;
-       const agent_point: HTMLInputElement = <HTMLInputElement>document.getElementById("agent_point");
-        const limit: HTMLInputElement = <HTMLInputElement>document.getElementById("Limit");       
+    //    const slider1 = document.getElementById("item1") as HTMLElement;
+    //    const agent_point: HTMLInputElement = <HTMLInputElement>document.getElementById("agent_point");
+    //     const limit: HTMLInputElement = <HTMLInputElement>document.getElementById("Limit");       
 
-        agent_point.addEventListener("input",(event)=>{
+    //     agent_point.addEventListener("input",(event)=>{
         
-        console.log("typescript_Expression");
-           console.log("agent_point",agent_point.value);
-            console.log("limit",limit.value);
-           if(agent_point.value<limit.value){
-            this.pixiCanvas?.hiyori.setExpression("angry1");
-           }
-           else{
-            this.pixiCanvas?.hiyori.setExpression("normal1");
-           }
+    //     console.log("typescript_Expression");
+    //        console.log("agent_point",agent_point.value);
+    //         console.log("limit",limit.value);
+    //        if(agent_point.value<limit.value){
+    //         this.pixiCanvas?.hiyori.setExpression("angry1");
+    //        }
+    //        else{
+    //         this.pixiCanvas?.hiyori.setExpression("normal1");
+    //        }
 
             
-       });
+    //    });
 ////////////////////////////////////////////////////////////////
 
 
@@ -283,4 +283,20 @@ export class App {
         this.pixiCanvas?.destoroy();
         window.speechSynthesis.cancel();
     };
+
+        ////////////////////////////////////////////////////////////////
+
+       //3Dテーブルとのマージ分
+       change_face = (point: number, limit: number) => {
+        if(point<limit){
+            console.log("a_point",point);
+            console.log("a_limit",limit);
+            this.pixiCanvas?.hiyori.setExpression("angry1");
+        }
+        else{
+            console.log("n_point",point);
+            console.log("n_limit",limit);
+            this.pixiCanvas?.hiyori.setExpression("normal1");
+        }
+       }
 }

@@ -40,6 +40,10 @@ export default class IndexLibrary {
     set_limit = (limit: number) => {
         this.limit = limit;
     }
+
+    App_set_point =() => {
+        this.app?.change_face(this.agent_point, this.limit);
+    }
 }
 
 //http://localhost:40080
