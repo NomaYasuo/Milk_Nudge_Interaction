@@ -197,6 +197,8 @@ export class MyCanvas {
         //---------------------------------------------------------------------
 
         //---------------回転スライダーの設定
+
+        /*レンジ削除
         const range = new Range(600, 30, 360, 0);
         stage.addChild(range.range);
         range.range.x = 500;
@@ -207,6 +209,7 @@ export class MyCanvas {
             hiyoriModel.angle = range.step;
             //console.log(hiyoriModel.angle)
         });
+        */
         //------------------------------
 
         // // 角丸四角形を描く
