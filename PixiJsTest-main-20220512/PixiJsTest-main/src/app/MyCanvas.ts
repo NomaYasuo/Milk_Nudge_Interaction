@@ -49,8 +49,8 @@ export class MyCanvas {
         //アプリ作成
         //オプション　https://pixijs.download/release/docs/PIXI.Application.html
         const pixiOptions: IApplicationOptions = {
-            width: 1000,
-            height: 1000,
+            width: 0,
+            height: 0,
             // width: 500,
             // height: 500,
             view: document.getElementById("myCanvas") as HTMLCanvasElement,
