@@ -194,6 +194,8 @@ export class CustomModel extends EventEmitter {
 
             this.container.interactive = true;
 
+
+            /*
             //マウスが動いた時のリスナー登録
             this.container.on("mousemove", (e: PIXI.InteractionEvent) => {
                 if (this.model === null) {
@@ -232,6 +234,9 @@ export class CustomModel extends EventEmitter {
                     this._isBoxOn = false;
                 }
             });
+
+            */
+           /*
             //モデルをタップした時に実行される
             this.model.interactive = true;
             this.model.on("hit", (hitAreaNames: Array<String>) => {
@@ -247,6 +252,9 @@ export class CustomModel extends EventEmitter {
                     });
                 }
             });
+            */
+
+            /*
 
             //ドラッ時の処理を追加
             let offsetX: number | null;
@@ -300,6 +308,10 @@ export class CustomModel extends EventEmitter {
             };
             this.container.on("pointerdown", onDragStart).on("pointerup", onDragEnd).on("pointerupoutside", onDragEnd).on("pointermove", onDragMove);
 
+    
+            */
+
+            
             // function onDragStart(event: PIXI.InteractionEvent) {
             //     const obj = event.currentTarget as DragObject;
             //     obj.dragData = event.data;
