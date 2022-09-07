@@ -68,6 +68,7 @@ export class MyCanvas {
         //225, 350, 0.25, 0, 250
         //("/Resources/Hiyori_2/Hiyori.model3.json");
         this.hiyori = new CustomModel(modelPath, "normal1", modelPosition.boxWidth, modelPosition.boxHeight, modelPosition.modelScale, modelPosition.modelX, modelPosition.modelY);
+        console.log("modelP",modelPosition);
         if (serverConnect === true && serverURL !== void 0) {
             //http://localhost:40080
             //http://192.168.3.10:40080
