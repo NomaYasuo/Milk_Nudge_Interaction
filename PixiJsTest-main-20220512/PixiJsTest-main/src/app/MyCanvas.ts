@@ -49,11 +49,8 @@ export class MyCanvas {
         //アプリ作成
         //オプション　https://pixijs.download/release/docs/PIXI.Application.html
         const pixiOptions: IApplicationOptions = {
-            width: 500,
-            height:500,//test
-        
-            // width: 500,
-            // height: 500,
+            width: 1000,
+            height: 1000,
             view: document.getElementById("myCanvas") as HTMLCanvasElement,
             backgroundColor: debug === true ? 0x000099 : void 0,
             resolution: window.devicePixelRatio || 1,
@@ -102,10 +99,8 @@ export class MyCanvas {
         const hiyoriModel = this.hiyori.getContainer(); //ひよりを格納しているPIXI.Containerを取得する。
 
         hiyoriModel.pivot.set(this.hiyori.getWidth() / 2, this.hiyori.getHeight() / 2);
-        // hiyoriModel.x = 500;
-        // hiyoriModel.y = 500;
-        hiyoriModel.x = 250;
-        hiyoriModel.y = 250;
+        hiyoriModel.x = 500;
+        hiyoriModel.y = 500;
         //hiyoriModel.angle = 45;
         //hiyoriModel.scale.set(1.25, 1.25);
         // const dai = new PIXI.Graphics();
@@ -202,8 +197,6 @@ export class MyCanvas {
         //---------------------------------------------------------------------
 
         //---------------回転スライダーの設定
-
-        /*レンジ削除
         const range = new Range(600, 30, 360, 0);
         stage.addChild(range.range);
         range.range.x = 500;
@@ -214,7 +207,6 @@ export class MyCanvas {
             hiyoriModel.angle = range.step;
             //console.log(hiyoriModel.angle)
         });
-        */
         //------------------------------
 
         // // 角丸四角形を描く

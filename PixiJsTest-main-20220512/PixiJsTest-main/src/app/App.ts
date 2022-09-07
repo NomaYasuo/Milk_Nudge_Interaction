@@ -1,4 +1,3 @@
-// test
 import { MyCanvas } from "./MyCanvas";
 import * as PIXILive2D from "pixi-live2d-display";
 import axios from "axios";
@@ -51,7 +50,7 @@ export class App {
         this.modelPath = modelPath;
     }
     mount = async () => {
-        console.log("AppマウントNoma");
+        console.log("Appマウント");
 
         //windowAudioContext構成
         window.AudioContext = window.AudioContext ?? window.webkitAudioContext;
@@ -71,8 +70,6 @@ export class App {
 
         //
 
-
-        /*
         //音声のセレクトボックス作成
         const selectBoxVoice = document.getElementById("selectVoice") as HTMLSelectElement;
         const voicevoxes = [
@@ -248,33 +245,37 @@ export class App {
             //あいうえお。かきくけこ。
         });
 
-        
-        */
+        const setvoice = document.getElementById("setvoice") as HTMLElement;
+        setvoice.addEventListener("click", (e: MouseEvent) => {
+            e.preventDefault();
+            if (this.pixiCanvas === null) return;
+            const index = selectBoxVoice.selectedIndex;
 
-    ////////////////////////////////////////////////////////////////
+            //サーバーがつながっていて、VOICEVOXが選択されているなら実行
+            if (this.serverConnect === true && index < voicevoxes.length) {
+                const speaker = index; //speakerのidは0～19                
+                this.pixiCanvas.playVoice(speaker, "セットボイスを押しました。", 1.75);
+            }
+            //SpeechAPIが選択されているかサーバーがつながっていないなら実行
+            else if (index >= voicevoxes.length || this.serverConnect === false) {
+                const voiceURI = selectBoxVoice.value;
+                //VoiceURIが一致するvoiceを探す
+                let voice;
+                voices.some((currentValue: SpeechSynthesisVoice) => {
+                    if (voiceURI === currentValue.voiceURI) {
+                        voice = currentValue;
+                        return true;
+                    }
+                });
 
-       //3Dテーブルとのマージ分
-    //    const slider1 = document.getElementById("item1") as HTMLElement;
-    //    const agent_point: HTMLInputElement = <HTMLInputElement>document.getElementById("agent_point");
-    //     const limit: HTMLInputElement = <HTMLInputElement>document.getElementById("Limit");       
-
-    //     agent_point.addEventListener("input",(event)=>{
-        
-    //     console.log("typescript_Expression");
-    //        console.log("agent_point",agent_point.value);
-    //         console.log("limit",limit.value);
-    //        if(agent_point.value<limit.value){
-    //         this.pixiCanvas?.hiyori.setExpression("angry1");
-    //        }
-    //        else{
-    //         this.pixiCanvas?.hiyori.setExpression("normal1");
-    //        }
-
-            
-    //    });
-////////////////////////////////////////////////////////////////
-
-
+                if (voice !== void 0) {
+                    this.pixiCanvas.playWebSpeech(voice, "セットボイスを押しました。", 1.0);
+                }
+            }
+            //建設業大手の腹黒(はらぐろ)建設が埼玉県内の土地の売買などをめぐって法人税数千万円を脱税した疑いが強まり、東京地検 特捜部などはきょう、群馬県高崎市の本社などを一斉に家宅捜索しました。
+            //早口言葉は、言いにくい言葉を通常より早く喋り、うまく言うことができるかを競う言葉遊び。また、それに用いる語句や文章。その多くは音節が舌を動かしづらい順序に並んでいて、文章の意味が脳で捉えにくいものになっている。 アナウンサーや俳優など、人前で話す職業に従事する人が滑舌を鍛える発声トレーニングに用いることもある。
+            //あいうえお。かきくけこ。
+        });
 
         //const voiceStop = document.getElementById("voiceStop") as HTMLElement;
         // voiceStop.addEventListener("click", (e: MouseEvent) => {
@@ -288,20 +289,4 @@ export class App {
         this.pixiCanvas?.destoroy();
         window.speechSynthesis.cancel();
     };
-
-        ////////////////////////////////////////////////////////////////
-
-       //3Dテーブルとのマージ分
-       change_face = (point: number, limit: number) => {
-        if(point<limit){
-            console.log("a_point",point);
-            console.log("a_limit",limit);
-            this.pixiCanvas?.hiyori.setExpression("angry1");
-        }
-        else{
-            console.log("n_point",point);
-            console.log("n_limit",limit);
-            this.pixiCanvas?.hiyori.setExpression("normal1");
-        }
-       }
 }
