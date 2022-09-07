@@ -289,4 +289,11 @@ export class App {
         this.pixiCanvas?.destoroy();
         window.speechSynthesis.cancel();
     };
+
+
+    ////////////////HiyoriTouch差分////////////////////
+
+    EstimateChangeFace = (preference:string) =>{
+        this.pixiCanvas?.hiyori.forceMotion(preference,void 0);
+    }
 }

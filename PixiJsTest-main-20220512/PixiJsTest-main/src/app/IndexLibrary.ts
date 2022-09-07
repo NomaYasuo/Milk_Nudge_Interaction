@@ -30,6 +30,9 @@ export default class IndexLibrary {
         console.log("アンロード");
         this.app?.unmount();
     };
+    App_EstimatePreference =(preference:string) => {
+        this.app?.EstimateChangeFace(preference);
+    }
 }
 
 //http://localhost:40080
