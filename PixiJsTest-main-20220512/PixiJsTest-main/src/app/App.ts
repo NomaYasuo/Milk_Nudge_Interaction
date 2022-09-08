@@ -64,7 +64,7 @@ export class App {
             .then(() => true)
             .catch(() => false);
         console.log("サーバーコネクト：" + this.serverConnect);
-
+        console.log("modelPosition：" + this.modelPosition);
         this.pixiCanvas = new MyCanvas(this.debug, this.serverConnect, this.serverURL, this.modelPath, this.modelPosition);
         //------------------------------------------------------------pixiアプリ初期化
         this.pixiCanvas.initialize();
