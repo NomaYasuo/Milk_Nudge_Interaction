@@ -34,6 +34,17 @@ export default class IndexLibrary {
         this.app?.unmount();
     };
 
+    // set_agentpoint = (point: number) => {
+    //     this.agent_point = point;
+    // }
+    set_limit = (limit: number) => {
+        this.limit = limit;
+    }
+
+    App_set_point =(point: number) => {
+        this.app?.change_face(point, this.limit);
+    }
+
     App_EstimatePreference = (preference: string) =>{
         this.app?.EstimateChangeFace(preference);
     }
