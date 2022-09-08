@@ -11,6 +11,9 @@ export default class IndexLibrary {
     private modelPath: string;
     private modelPosition: ModelPosition;
     private app: App | null;
+    private agent_point: number =0;
+    private limit: number =0;
+
 
     constructor(debug: boolean, serverURL: string, modelPath: string, modelPosition: ModelPosition) {
         this.debug = debug;
@@ -30,7 +33,8 @@ export default class IndexLibrary {
         console.log("アンロード");
         this.app?.unmount();
     };
-    App_EstimatePreference =(preference:string) => {
+
+    App_EstimatePreference = (preference: string) =>{
         this.app?.EstimateChangeFace(preference);
     }
 }

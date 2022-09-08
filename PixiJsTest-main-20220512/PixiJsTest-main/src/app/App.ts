@@ -1,3 +1,4 @@
+// test
 import { MyCanvas } from "./MyCanvas";
 import * as PIXILive2D from "pixi-live2d-display";
 import axios from "axios";
@@ -50,243 +51,237 @@ export class App {
         this.modelPath = modelPath;
     }
     mount = async () => {
-        console.log("Appマウント");
-            window.AudioContext = window.AudioContext ?? window.webkitAudioContext;
-            this.pixiCanvas = await new _MyCanvas__WEBPACK_IMPORTED_MODULE_0__.MyCanvas(this.debug, this.modelPath, this.modelPosition);
-            await this.pixiCanvas.initialize();
-        // console.log("Appマウント");
+        console.log("AppマウントNoma");
 
-        // //windowAudioContext構成
-        // window.AudioContext = window.AudioContext ?? window.webkitAudioContext;
+        //windowAudioContext構成
+        window.AudioContext = window.AudioContext ?? window.webkitAudioContext;
 
-        // //VOICEVOXサーバーとの接続確認
-        // const rpc = axios.create({ baseURL: this.serverURL, proxy: false });
-        // //* まずtextを渡してsynthesis宛のパラメータを生成する、textはURLに付けるのでencodeURIで変換しておく。*/
-        // this.serverConnect = await rpc
-        //     .post("audio_query?text=" + encodeURI("あいうえお。") + "&speaker=1")
-        //     .then(() => true)
-        //     .catch(() => false);
-        // console.log("サーバーコネクト：" + this.serverConnect);
+        //VOICEVOXサーバーとの接続確認
+        const rpc = axios.create({ baseURL: this.serverURL, proxy: false });
+        //* まずtextを渡してsynthesis宛のパラメータを生成する、textはURLに付けるのでencodeURIで変換しておく。*/
+        this.serverConnect = await rpc
+            .post("audio_query?text=" + encodeURI("あいうえお。") + "&speaker=1")
+            .then(() => true)
+            .catch(() => false);
+        console.log("サーバーコネクト：" + this.serverConnect);
 
-        // this.pixiCanvas = new MyCanvas(this.debug, this.serverConnect, this.serverURL, this.modelPath, this.modelPosition);
-        // //------------------------------------------------------------pixiアプリ初期化
-        // this.pixiCanvas.initialize();
+        this.pixiCanvas = new MyCanvas(this.debug, this.serverConnect, this.serverURL, this.modelPath, this.modelPosition);
+        //------------------------------------------------------------pixiアプリ初期化
+        this.pixiCanvas.initialize();
 
-        // //
+        //
 
-        // //音声のセレクトボックス作成
-        // const selectBoxVoice = document.getElementById("selectVoice") as HTMLSelectElement;
-        // const voicevoxes = [
-        //     "四国めたん　あまあま",
-        //     "ずんだもん　あまあま",
-        //     "四国めたん　ノーマル",
-        //     "ずんだもん　ノーマル",
-        //     "四国めたん　セクシー",
-        //     "ずんだもん　セクシー",
-        //     "四国めたん　ツンツン",
-        //     "ずんだもん　ツンツン",
-        //     "春日部つむぎ　ノーマル",
-        //     "波音リツ　ノーマル",
-        //     "雨晴はう　ノーマル",
-        //     "玄野勇宏　ノーマル",
-        //     "百上虎太郎　ノーマル",
-        //     "青山龍星　ノーマル",
-        //     "冥鳴日ひまり　ノーマル",
-        //     "九州そら　あまあま",
-        //     "九州そら　ノーマル",
-        //     "九州そら　セクシー",
-        //     "九州そら　つんつん",
-        //     "九州そら　ささやき",
-        // ];
-        // //VOICECOX
-        // if (this.serverConnect === true) {
-        //     for (let i: number = 0; i < voicevoxes.length; i++) {
-        //         let select = document.createElement("option");
-        //         select.innerText = voicevoxes[i];
-        //         if (i === 4) {
-        //             select.selected = true;
-        //         }
-        //         selectBoxVoice.appendChild(select);
-        //     }
-        // }
-        // //WEB SPEECH API
-        // let voices: SpeechSynthesisVoice[];
-        // const intervalID = window.setInterval(() => {
-        //     voices = window.speechSynthesis.getVoices();
-        //     if (voices.length !== 0) {
-        //         //console.log(voices);
-        //         window.clearInterval(intervalID);
-        //         for (let i: number = 0; i < voices.length; i++) {
-        //             let select = document.createElement("option");
-        //             select.innerText = voices[i].voiceURI;
-        //             if (this.serverConnect === false && i === 0) {
-        //                 select.selected = true;
-        //             }
-        //             selectBoxVoice.appendChild(select);
-        //         }
-        //     }
-        // }, 1);
 
-        // //設定ファイルを取得
-        // const response = await axios.get(this.modelPath).catch(() => {
-        //     throw new Error(`${this.modelPath}を取得できませんでした`);
-        // });
-        // const modelSettings: MyModelSettings = JSON.parse(JSON.stringify(response.data));
-        // //モーションのセレクトボックス作成
-        // const selectBoxMotion = document.getElementById("selectMotion") as HTMLSelectElement;
-        // const motionNum: number = (modelSettings.FileReferences.Motions["All" as keyof typeof modelSettings.FileReferences.Motions] as unknown as Motion[]).length;
-        // for (let i: number = 0; i < motionNum; i++) {
-        //     let select = document.createElement("option");
-        //     select.innerText = `All：${i}`;
-        //     if (i === 0) {
-        //         select.selected = true;
-        //     }
-        //     selectBoxMotion.appendChild(select);
-        // }
+        /*
+        //音声のセレクトボックス作成
+        const selectBoxVoice = document.getElementById("selectVoice") as HTMLSelectElement;
+        const voicevoxes = [
+            "四国めたん　あまあま",
+            "ずんだもん　あまあま",
+            "四国めたん　ノーマル",
+            "ずんだもん　ノーマル",
+            "四国めたん　セクシー",
+            "ずんだもん　セクシー",
+            "四国めたん　ツンツン",
+            "ずんだもん　ツンツン",
+            "春日部つむぎ　ノーマル",
+            "波音リツ　ノーマル",
+            "雨晴はう　ノーマル",
+            "玄野勇宏　ノーマル",
+            "百上虎太郎　ノーマル",
+            "青山龍星　ノーマル",
+            "冥鳴日ひまり　ノーマル",
+            "九州そら　あまあま",
+            "九州そら　ノーマル",
+            "九州そら　セクシー",
+            "九州そら　つんつん",
+            "九州そら　ささやき",
+        ];
+        //VOICECOX
+        if (this.serverConnect === true) {
+            for (let i: number = 0; i < voicevoxes.length; i++) {
+                let select = document.createElement("option");
+                select.innerText = voicevoxes[i];
+                if (i === 4) {
+                    select.selected = true;
+                }
+                selectBoxVoice.appendChild(select);
+            }
+        }
+        //WEB SPEECH API
+        let voices: SpeechSynthesisVoice[];
+        const intervalID = window.setInterval(() => {
+            voices = window.speechSynthesis.getVoices();
+            if (voices.length !== 0) {
+                //console.log(voices);
+                window.clearInterval(intervalID);
+                for (let i: number = 0; i < voices.length; i++) {
+                    let select = document.createElement("option");
+                    select.innerText = voices[i].voiceURI;
+                    if (this.serverConnect === false && i === 0) {
+                        select.selected = true;
+                    }
+                    selectBoxVoice.appendChild(select);
+                }
+            }
+        }, 1);
 
-        // //表情のセレクトボックス作成
-        // const selectBoxExpression = document.getElementById("selectExpression") as HTMLSelectElement;
-        // const expressionNum: number = modelSettings.FileReferences.Expressions.length;
-        // for (let i: number = 0; i < expressionNum; i++) {
-        //     let select = document.createElement("option");
-        //     select.innerText = `${modelSettings.FileReferences.Expressions[i].Name}`;
-        //     if (i === 0) {
-        //         select.selected = true;
-        //     }
-        //     selectBoxExpression.appendChild(select);
-        // }
+        //設定ファイルを取得
+        const response = await axios.get(this.modelPath).catch(() => {
+            throw new Error(`${this.modelPath}を取得できませんでした`);
+        });
+        const modelSettings: MyModelSettings = JSON.parse(JSON.stringify(response.data));
+        //モーションのセレクトボックス作成
+        const selectBoxMotion = document.getElementById("selectMotion") as HTMLSelectElement;
+        const motionNum: number = (modelSettings.FileReferences.Motions["All" as keyof typeof modelSettings.FileReferences.Motions] as unknown as Motion[]).length;
+        for (let i: number = 0; i < motionNum; i++) {
+            let select = document.createElement("option");
+            select.innerText = `All：${i}`;
+            if (i === 0) {
+                select.selected = true;
+            }
+            selectBoxMotion.appendChild(select);
+        }
 
-        // //ボタンリスナー登録
-        // const expansionButton = document.getElementById("expansion") as HTMLElement;
-        // expansionButton.addEventListener("click", (e: MouseEvent) => {
-        //     e.preventDefault();
-        //     if (this.pixiCanvas === null) return;
-        //     const box = this.pixiCanvas.hiyori.getContainer();
-        //     box.scale.set(box.scale.x * 1.1, box.scale.y * 1.1);
-        // });
+        //表情のセレクトボックス作成
+        const selectBoxExpression = document.getElementById("selectExpression") as HTMLSelectElement;
+        const expressionNum: number = modelSettings.FileReferences.Expressions.length;
+        for (let i: number = 0; i < expressionNum; i++) {
+            let select = document.createElement("option");
+            select.innerText = `${modelSettings.FileReferences.Expressions[i].Name}`;
+            if (i === 0) {
+                select.selected = true;
+            }
+            selectBoxExpression.appendChild(select);
+        }
 
-        // const shrinkButton = document.getElementById("shrink") as HTMLElement;
-        // shrinkButton.addEventListener("click", (e: MouseEvent) => {
-        //     e.preventDefault();
-        //     if (this.pixiCanvas === null) return;
-        //     const box = this.pixiCanvas.hiyori.getContainer();
-        //     box.scale.set(box.scale.x * 0.9, box.scale.y * 0.9);
-        // });
+        //ボタンリスナー登録
+        const expansionButton = document.getElementById("expansion") as HTMLElement;
+        expansionButton.addEventListener("click", (e: MouseEvent) => {
+            e.preventDefault();
+            if (this.pixiCanvas === null) return;
+            const box = this.pixiCanvas.hiyori.getContainer();
+            box.scale.set(box.scale.x * 1.1, box.scale.y * 1.1);
+        });
 
-        // const startMotion = document.getElementById("startMotion") as HTMLElement;
-        // startMotion.addEventListener("click", (e: MouseEvent) => {
-        //     e.preventDefault();
-        //     if (this.pixiCanvas === null) return;
-        //     this.pixiCanvas.hiyori.forceMotion("All", selectBoxMotion.selectedIndex);
-        //     //console.log("再生");
-        //     //this.pixiCanvas.hiyori.idleGroup = "All";
-        // });
+        const shrinkButton = document.getElementById("shrink") as HTMLElement;
+        shrinkButton.addEventListener("click", (e: MouseEvent) => {
+            e.preventDefault();
+            if (this.pixiCanvas === null) return;
+            const box = this.pixiCanvas.hiyori.getContainer();
+            box.scale.set(box.scale.x * 0.9, box.scale.y * 0.9);
+        });
 
-        // const expressionButton = document.getElementById("setExpression") as HTMLElement;
-        // expressionButton.addEventListener("click", (e: MouseEvent) => {
-        //     e.preventDefault();
-        //     this.pixiCanvas?.hiyori.setExpression(selectBoxExpression.value);
-        // });
+        const startMotion = document.getElementById("startMotion") as HTMLElement;
+        startMotion.addEventListener("click", (e: MouseEvent) => {
+            e.preventDefault();
+            if (this.pixiCanvas === null) return;
+            this.pixiCanvas.hiyori.forceMotion("All", selectBoxMotion.selectedIndex);
+            //console.log("再生");
+            //this.pixiCanvas.hiyori.idleGroup = "All";
+        });
 
-        // const startSpeak = document.getElementById("speakStart") as HTMLElement;
-        // startSpeak.addEventListener("click", (e: MouseEvent) => {
-        //     e.preventDefault();
-        //     if (this.pixiCanvas === null) return;
-        //     window.speechSynthesis.pause(); //------------------これでwebspeechを止める
-        //     this.pixiCanvas.hiyori.startSpeak(1);
-        // });
+        const expressionButton = document.getElementById("setExpression") as HTMLElement;
+        expressionButton.addEventListener("click", (e: MouseEvent) => {
+            e.preventDefault();
+            this.pixiCanvas?.hiyori.setExpression(selectBoxExpression.value);
+        });
 
-        // const stopSoeak = document.getElementById("speakStop") as HTMLElement;
-        // stopSoeak.addEventListener("click", (e: MouseEvent) => {
-        //     e.preventDefault();
-        //     if (this.pixiCanvas === null) return;
+        const startSpeak = document.getElementById("speakStart") as HTMLElement;
+        startSpeak.addEventListener("click", (e: MouseEvent) => {
+            e.preventDefault();
+            if (this.pixiCanvas === null) return;
+            window.speechSynthesis.pause(); //------------------これでwebspeechを止める
+            this.pixiCanvas.hiyori.startSpeak(1);
+        });
+
+        const stopSoeak = document.getElementById("speakStop") as HTMLElement;
+        stopSoeak.addEventListener("click", (e: MouseEvent) => {
+            e.preventDefault();
+            if (this.pixiCanvas === null) return;
+            this.pixiCanvas.hiyori.stopSpeak();
+            window.speechSynthesis.cancel(); //------------------これでwebspeechを止める
+        });
+
+        const voiceStart = document.getElementById("voiceStart") as HTMLElement;
+        voiceStart.addEventListener("click", (e: MouseEvent) => {
+            e.preventDefault();
+            if (this.pixiCanvas === null) return;
+            const textBox = document.getElementById("textBox") as HTMLTextAreaElement;
+            const index = selectBoxVoice.selectedIndex;
+
+            //サーバーがつながっていて、VOICEVOXが選択されているなら実行
+            if (this.serverConnect === true && index < voicevoxes.length) {
+                const speaker = index; //speakerのidは0～19
+                //文字が入力されているなら
+                if (textBox.value === "") {
+                    console.log("文字が入力されていない");
+                    this.pixiCanvas.playVoice(speaker, "私に話させたい文字列を入力してください。", 1.75);
+                } else {
+                    this.pixiCanvas.playVoice(speaker, textBox.value, 1.75);
+                }
+            }
+            //SpeechAPIが選択されているかサーバーがつながっていないなら実行
+            else if (index >= voicevoxes.length || this.serverConnect === false) {
+                const voiceURI = selectBoxVoice.value;
+                //VoiceURIが一致するvoiceを探す
+                let voice;
+                voices.some((currentValue: SpeechSynthesisVoice) => {
+                    if (voiceURI === currentValue.voiceURI) {
+                        voice = currentValue;
+                        return true;
+                    }
+                });
+
+                if (voice !== void 0) {
+                    //文字が入力されているなら
+                    if (textBox.value === "") {
+                        console.log("文字が入力されていない");
+                        this.pixiCanvas.playWebSpeech(voice, "私に話させたい文字列を入力してください。", 1.0);
+                    } else {
+                        this.pixiCanvas.playWebSpeech(voice, textBox.value, 1.0);
+                    }
+                }
+            }
+            //建設業大手の腹黒(はらぐろ)建設が埼玉県内の土地の売買などをめぐって法人税数千万円を脱税した疑いが強まり、東京地検 特捜部などはきょう、群馬県高崎市の本社などを一斉に家宅捜索しました。
+            //早口言葉は、言いにくい言葉を通常より早く喋り、うまく言うことができるかを競う言葉遊び。また、それに用いる語句や文章。その多くは音節が舌を動かしづらい順序に並んでいて、文章の意味が脳で捉えにくいものになっている。 アナウンサーや俳優など、人前で話す職業に従事する人が滑舌を鍛える発声トレーニングに用いることもある。
+            //あいうえお。かきくけこ。
+        });
+
+        
+        */
+
+    ////////////////////////////////////////////////////////////////
+
+       //3Dテーブルとのマージ分
+    //    const slider1 = document.getElementById("item1") as HTMLElement;
+    //    const agent_point: HTMLInputElement = <HTMLInputElement>document.getElementById("agent_point");
+    //     const limit: HTMLInputElement = <HTMLInputElement>document.getElementById("Limit");       
+
+    //     agent_point.addEventListener("input",(event)=>{
+        
+    //     console.log("typescript_Expression");
+    //        console.log("agent_point",agent_point.value);
+    //         console.log("limit",limit.value);
+    //        if(agent_point.value<limit.value){
+    //         this.pixiCanvas?.hiyori.setExpression("angry1");
+    //        }
+    //        else{
+    //         this.pixiCanvas?.hiyori.setExpression("normal1");
+    //        }
+
+            
+    //    });
+////////////////////////////////////////////////////////////////
+
+
+
+        //const voiceStop = document.getElementById("voiceStop") as HTMLElement;
+        // voiceStop.addEventListener("click", (e: MouseEvent) => {
         //     this.pixiCanvas.hiyori.stopSpeak();
-        //     window.speechSynthesis.cancel(); //------------------これでwebspeechを止める
+        //     // this.pixiCanvas.hiyori.container.width = 500;
+        //     // this.pixiCanvas.hiyori.container.height = 1000;
         // });
-
-        // const voiceStart = document.getElementById("voiceStart") as HTMLElement;
-        // voiceStart.addEventListener("click", (e: MouseEvent) => {
-        //     e.preventDefault();
-        //     if (this.pixiCanvas === null) return;
-        //     const textBox = document.getElementById("textBox") as HTMLTextAreaElement;
-        //     const index = selectBoxVoice.selectedIndex;
-
-        //     //サーバーがつながっていて、VOICEVOXが選択されているなら実行
-        //     if (this.serverConnect === true && index < voicevoxes.length) {
-        //         const speaker = index; //speakerのidは0～19
-        //         //文字が入力されているなら
-        //         if (textBox.value === "") {
-        //             console.log("文字が入力されていない");
-        //             this.pixiCanvas.playVoice(speaker, "私に話させたい文字列を入力してください。", 1.75);
-        //         } else {
-        //             this.pixiCanvas.playVoice(speaker, textBox.value, 1.75);
-        //         }
-        //     }
-        //     //SpeechAPIが選択されているかサーバーがつながっていないなら実行
-        //     else if (index >= voicevoxes.length || this.serverConnect === false) {
-        //         const voiceURI = selectBoxVoice.value;
-        //         //VoiceURIが一致するvoiceを探す
-        //         let voice;
-        //         voices.some((currentValue: SpeechSynthesisVoice) => {
-        //             if (voiceURI === currentValue.voiceURI) {
-        //                 voice = currentValue;
-        //                 return true;
-        //             }
-        //         });
-
-        //         if (voice !== void 0) {
-        //             //文字が入力されているなら
-        //             if (textBox.value === "") {
-        //                 console.log("文字が入力されていない");
-        //                 this.pixiCanvas.playWebSpeech(voice, "私に話させたい文字列を入力してください。", 1.0);
-        //             } else {
-        //                 this.pixiCanvas.playWebSpeech(voice, textBox.value, 1.0);
-        //             }
-        //         }
-        //     }
-        //     //建設業大手の腹黒(はらぐろ)建設が埼玉県内の土地の売買などをめぐって法人税数千万円を脱税した疑いが強まり、東京地検 特捜部などはきょう、群馬県高崎市の本社などを一斉に家宅捜索しました。
-        //     //早口言葉は、言いにくい言葉を通常より早く喋り、うまく言うことができるかを競う言葉遊び。また、それに用いる語句や文章。その多くは音節が舌を動かしづらい順序に並んでいて、文章の意味が脳で捉えにくいものになっている。 アナウンサーや俳優など、人前で話す職業に従事する人が滑舌を鍛える発声トレーニングに用いることもある。
-        //     //あいうえお。かきくけこ。
-        // });
-
-        // const setvoice = document.getElementById("setvoice") as HTMLElement;
-        // setvoice.addEventListener("click", (e: MouseEvent) => {
-        //     e.preventDefault();
-        //     if (this.pixiCanvas === null) return;
-        //     const index = selectBoxVoice.selectedIndex;
-
-        //     //サーバーがつながっていて、VOICEVOXが選択されているなら実行
-        //     if (this.serverConnect === true && index < voicevoxes.length) {
-        //         const speaker = index; //speakerのidは0～19                
-        //         this.pixiCanvas.playVoice(speaker, "セットボイスを押しました。", 1.75);
-        //     }
-        //     //SpeechAPIが選択されているかサーバーがつながっていないなら実行
-        //     else if (index >= voicevoxes.length || this.serverConnect === false) {
-        //         const voiceURI = selectBoxVoice.value;
-        //         //VoiceURIが一致するvoiceを探す
-        //         let voice;
-        //         voices.some((currentValue: SpeechSynthesisVoice) => {
-        //             if (voiceURI === currentValue.voiceURI) {
-        //                 voice = currentValue;
-        //                 return true;
-        //             }
-        //         });
-
-        //         if (voice !== void 0) {
-        //             this.pixiCanvas.playWebSpeech(voice, "セットボイスを押しました。", 1.0);
-        //         }
-        //     }
-        //     //建設業大手の腹黒(はらぐろ)建設が埼玉県内の土地の売買などをめぐって法人税数千万円を脱税した疑いが強まり、東京地検 特捜部などはきょう、群馬県高崎市の本社などを一斉に家宅捜索しました。
-        //     //早口言葉は、言いにくい言葉を通常より早く喋り、うまく言うことができるかを競う言葉遊び。また、それに用いる語句や文章。その多くは音節が舌を動かしづらい順序に並んでいて、文章の意味が脳で捉えにくいものになっている。 アナウンサーや俳優など、人前で話す職業に従事する人が滑舌を鍛える発声トレーニングに用いることもある。
-        //     //あいうえお。かきくけこ。
-        // });
-
-        // //const voiceStop = document.getElementById("voiceStop") as HTMLElement;
-        // // voiceStop.addEventListener("click", (e: MouseEvent) => {
-        // //     this.pixiCanvas.hiyori.stopSpeak();
-        // //     // this.pixiCanvas.hiyori.container.width = 500;
-        // //     // this.pixiCanvas.hiyori.container.height = 1000;
-        // // });
     };
 
     unmount = () => {
@@ -294,10 +289,24 @@ export class App {
         window.speechSynthesis.cancel();
     };
 
+        ////////////////////////////////////////////////////////////////
 
-    ////////////////HiyoriTouch差分////////////////////
+       //3Dテーブルとのマージ分
+       change_face = (point: number, limit: number) => {
+        if(point<limit){
+            console.log("a_point",point);
+            console.log("a_limit",limit);
+            this.pixiCanvas?.hiyori.setExpression("angry1");
+        }
+        else{
+            console.log("n_point",point);
+            console.log("n_limit",limit);
+            this.pixiCanvas?.hiyori.setExpression("normal1");
+        }
+       }
 
-    EstimateChangeFace = (preference:string) =>{
+       EstimateChangeFace = (preference:string) => {
         this.pixiCanvas?.hiyori.forceMotion(preference,void 0);
-    }
+        console.log("EstimateChangeFace",preference);
+       }
 }
