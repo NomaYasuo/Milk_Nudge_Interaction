@@ -188,6 +188,7 @@ export class MyCanvas {
             //HiyoriTouch内、Estimateのアイテム見せでアイテムを非表示にする
             if($(".item").length){
                 $(".item").css("display","none");
+                $("#EstimateAnimationFlag").val("1");
             }
         });
         //モーションが始まったときの処理。
