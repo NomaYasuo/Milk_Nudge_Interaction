@@ -185,6 +185,10 @@ export class MyCanvas {
         //モーションが最後まで再生されたときの処理
         this.hiyori.onMotionFinished((currentGroup: string, currentIndex: number) => {
             console.log(`「${currentGroup}」グループの、「${currentIndex}」番目のモーションが終了`);
+            //HiyoriTouch内、Estimateのアイテム見せでアイテムを非表示にする
+            if($(".item").length){
+                $(".item").css("display","none");
+            }
         });
         //モーションが始まったときの処理。
         this.hiyori.onMotionStarted((currentGroup: string, currentIndex: number) => {
