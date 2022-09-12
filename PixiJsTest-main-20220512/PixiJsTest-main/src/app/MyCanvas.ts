@@ -189,7 +189,7 @@ export class MyCanvas {
             if($(".item").length){
                 $(".item").css("display","none");
                 if((currentGroup == "Dislike")||(currentGroup == "Like")){
-                    $("#EstimateAnimationFlag").val("1");
+                    $("#EstimateAnimationFlag").html("1");
                     console.log("OK!");
                 }
                 // $("#EstimateAnimationFlag").val("1");
