@@ -187,8 +187,8 @@ export class MyCanvas {
             console.log(`「${currentGroup}」グループの、「${currentIndex}」番目のモーションが終了`);
             //HiyoriTouch内、Estimateのアイテム見せでアイテムを非表示にする
             if($(".item").length){
-                $(".item").css("display","none");
                 if((currentGroup == "Dislike")||(currentGroup == "Like")){
+                    $(".item").css("display","none");
                     $("#EstimateAnimationFlag").html("1");
                     console.log("OK!");
                 }
