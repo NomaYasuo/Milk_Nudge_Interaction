@@ -104,8 +104,8 @@ export class MyCanvas {
         hiyoriModel.pivot.set(this.hiyori.getWidth() / 2, this.hiyori.getHeight() / 2);
         // hiyoriModel.x = 500;
         // hiyoriModel.y = 500;
-        hiyoriModel.x = 250;
-        hiyoriModel.y = 250;
+        hiyoriModel.x = 300;
+        hiyoriModel.y = 300;
         //hiyoriModel.angle = 45;
         //hiyoriModel.scale.set(1.25, 1.25);
         // const dai = new PIXI.Graphics();
