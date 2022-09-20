@@ -48,6 +48,10 @@ export default class IndexLibrary {
     App_EstimatePreference = (preference: string) =>{
         this.app?.EstimateChangeFace(preference);
     }
+
+    App_StartSpeak = (listner: () => void) =>{
+        this.app?.MyCanvasStartSpeak(listner);
+    }
 }
 
 //http://localhost:40080

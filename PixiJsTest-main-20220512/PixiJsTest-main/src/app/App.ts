@@ -309,4 +309,9 @@ export class App {
         this.pixiCanvas?.hiyori.forceMotion(preference,void 0);
         console.log("EstimateChangeFace",preference);
        }
+
+       MyCanvasStartSpeak = (listner: () => void) =>{
+        console.log("MyCanvasStartSpeak");
+        this.pixiCanvas?.hiyori.onStartSpeak(listner);
+       }
 }
