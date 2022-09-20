@@ -52,6 +52,10 @@ export default class IndexLibrary {
     App_StartSpeak = () =>{
         this.app?.MyCanvasStartSpeak();
     }
+    
+    App_StopSpeak(){
+        this.app?.MyCanvasStopSpeak();
+    } 
 }
 
 //http://localhost:40080

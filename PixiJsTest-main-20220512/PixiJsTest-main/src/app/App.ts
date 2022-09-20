@@ -314,4 +314,8 @@ export class App {
         console.log("MyCanvasStartSpeak");
         this.pixiCanvas?.hiyori.startSpeak(1);
        }
+
+       MyCanvasStopSpeak(){
+        this.pixiCanvas?.hiyori.stopSpeak();
+       }
 }
