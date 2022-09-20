@@ -49,8 +49,8 @@ export default class IndexLibrary {
         this.app?.EstimateChangeFace(preference);
     }
 
-    App_StartSpeak = (listner: () => void) =>{
-        this.app?.MyCanvasStartSpeak(listner);
+    App_StartSpeak = () =>{
+        this.app?.MyCanvasStartSpeak();
     }
 }
 

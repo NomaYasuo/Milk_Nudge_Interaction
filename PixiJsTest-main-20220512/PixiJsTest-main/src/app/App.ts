@@ -310,8 +310,8 @@ export class App {
         console.log("EstimateChangeFace",preference);
        }
 
-       MyCanvasStartSpeak = (listner: () => void) =>{
+       MyCanvasStartSpeak = () =>{
         console.log("MyCanvasStartSpeak");
-        this.pixiCanvas?.hiyori.onStartSpeak(listner);
+        this.pixiCanvas?.hiyori.startSpeak(1);
        }
 }
