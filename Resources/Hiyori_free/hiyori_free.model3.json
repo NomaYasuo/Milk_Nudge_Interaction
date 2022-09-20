@@ -29,12 +29,12 @@
 			],
 			"StartSpeak":[
 				{
-					"File": "motions/Hiyori_m01.motion3.json",
+					"File": "motion/Hiyori_m01.motion3.json",
 					"FadeInTime": 0.5,
 					"FadeOutTime": 0.5
 				},
 				{
-					"File": "motions/Hiyori_m03.motion3.json",
+					"File": "motion/Hiyori_m03.motion3.json",
 					"FadeInTime": 0.5,
 					"FadeOutTime": 0.5
 				}
