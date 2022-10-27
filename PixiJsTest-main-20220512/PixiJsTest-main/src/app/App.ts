@@ -312,7 +312,7 @@ export class App {
 
        MyCanvasStartSpeak = () =>{
         console.log("MyCanvasStartSpeak");
-        this.pixiCanvas?.hiyori.startSpeak(1);
+        this.pixiCanvas?.hiyori.startSpeak(1.5);
        }
 
        MyCanvasStopSpeak(){
