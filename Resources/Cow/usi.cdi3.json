@@ -1,0 +1,158 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "左目　開閉"
+		},
+		{
+			"Id": "Smile",
+			"GroupId": "",
+			"Name": "笑顔"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "右目　開閉"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "右目　笑顔"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "口　変形"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "口　開閉"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "耳の揺れ"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "首輪の揺れ"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "",
+			"Name": "ベルの揺れ"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "",
+			"Name": "ベル中の揺れ"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "ベルの揺れ手前"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh33",
+			"GroupId": "ParamGroup",
+			"Name": "[0]レイヤー 35"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh33",
+			"GroupId": "ParamGroup",
+			"Name": "[1]レイヤー 35"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh33",
+			"GroupId": "ParamGroup",
+			"Name": "[2]レイヤー 35"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh33",
+			"GroupId": "ParamGroup",
+			"Name": "[3]レイヤー 35"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh33",
+			"GroupId": "ParamGroup",
+			"Name": "[4]レイヤー 35"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "レイヤー 35"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Part14",
+			"Name": "ウシ.psd（対応無し）"
+		},
+		{
+			"Id": "Part",
+			"Name": "フォルダー 1"
+		},
+		{
+			"Id": "Part8",
+			"Name": "フォルダー 1"
+		},
+		{
+			"Id": "Part2",
+			"Name": "フォルダー 8"
+		},
+		{
+			"Id": "Part4",
+			"Name": "目"
+		},
+		{
+			"Id": "Part5",
+			"Name": "ベル"
+		},
+		{
+			"Id": "Part6",
+			"Name": "フォルダー 12"
+		},
+		{
+			"Id": "Part13",
+			"Name": "フォルダー 12"
+		},
+		{
+			"Id": "Part3",
+			"Name": "フォルダー 13"
+		},
+		{
+			"Id": "ArtMesh33_Skinning",
+			"Name": "レイヤー 35(スキニング)"
+		},
+		{
+			"Id": "Part7",
+			"Name": "レイヤー 35(回転)"
+		}
+	]
+}
