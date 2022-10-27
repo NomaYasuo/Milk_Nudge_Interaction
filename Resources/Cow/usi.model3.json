@@ -17,7 +17,7 @@
 		
 			"StartSpeak":[
 				{
-					"File": "Scene1.motion3",
+					"File": "Scene1.motion3.json",
 					"FadeInTime": 0.5,
 					"FadeOutTime": 0.5
 				}
