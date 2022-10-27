@@ -142,7 +142,7 @@ export class MyCanvas {
         });
         //モデルが話始めたときの処理
         this.hiyori.onStartSpeak(() => {
-            this.hiyori.forceMotion("StartSpeak", void 0);
+            // this.hiyori.forceMotion("StartSpeak", void 0);
             this.hiyori.idleGroup = "StartSpeak";
             console.log("口パク、または発話始め。");
         });
