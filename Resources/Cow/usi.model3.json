@@ -12,7 +12,18 @@
 				"Name": "normal1",
 				"File": "normal1.exp3.json"
 			}
-		]
+		],
+		"Motions": {
+		
+			"StartSpeak":[
+				{
+					"File": "Scene1.motion3",
+					"FadeInTime": 0.5,
+					"FadeOutTime": 0.5
+				}
+			]
+			
+		}
 	},
 	"Groups": [
 		{
