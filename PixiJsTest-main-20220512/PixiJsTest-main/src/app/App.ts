@@ -312,7 +312,8 @@ export class App {
 
        MyCanvasStartSpeak = () =>{
         console.log("MyCanvasStartSpeak");
-        this.pixiCanvas?.hiyori.startSpeak(1);
+        // this.pixiCanvas?.hiyori.startSpeak(1);
+        this.pixiCanvas?.hiyori.forceMotion("StartSpeak",void 0);
        }
 
        MyCanvasStopSpeak(){
