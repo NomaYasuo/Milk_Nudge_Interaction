@@ -784,6 +784,7 @@ export class CustomModel extends EventEmitter {
             }
         }
 
+        console.log("SetExpressionid",id);
         //表情反映
         this.model.expression(id);
         this.currentExpression = id;
