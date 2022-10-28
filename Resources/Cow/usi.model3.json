@@ -9,7 +9,7 @@
 		"DisplayInfo": "usi.cdi3.json",
 		"Expressions": [
 			{
-				"Name": "normal1",
+				"Name": "nomal",
 				"File": "expressions/normal1.exp3.json"
 			},
 			{
