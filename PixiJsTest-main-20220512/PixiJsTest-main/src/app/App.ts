@@ -294,6 +294,7 @@ export class App {
        //3Dテーブルとのマージ分
        change_face = (expression: string) => {
             this.pixiCanvas?.hiyori.setExpression(expression);
+            console.log("change_face:"+expression);
        }
 
        EstimateChangeFace = (preference:string) => {
