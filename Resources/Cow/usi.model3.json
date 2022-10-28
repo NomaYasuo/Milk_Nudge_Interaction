@@ -13,12 +13,12 @@
 				"File": "expressions/normal1.exp3.json"
 			},
 			{
-				"Name": "angry",
-				"File": "expressions/angry.exp3.json"
-			},
-			{
 				"Name": "happy",
 				"File": "expressions/happy.exp3.json"
+			},
+			{
+				"Name": "angry",
+				"File": "expressions/angry.exp3.json"
 			}
 		]
 	},
