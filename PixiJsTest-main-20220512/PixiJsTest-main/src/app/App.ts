@@ -292,17 +292,8 @@ export class App {
         ////////////////////////////////////////////////////////////////
 
        //3Dテーブルとのマージ分
-       change_face = (point: number, limit: number) => {
-        if(point<limit){
-            console.log("a_point",point);
-            console.log("a_limit",limit);
-            this.pixiCanvas?.hiyori.setExpression("angry");
-        }
-        else{
-            console.log("n_point",point);
-            console.log("n_limit",limit);
-            this.pixiCanvas?.hiyori.setExpression("happy");
-        }
+       change_face = (expression: string) => {
+            this.pixiCanvas?.hiyori.setExpression(expression);
        }
 
        EstimateChangeFace = (preference:string) => {

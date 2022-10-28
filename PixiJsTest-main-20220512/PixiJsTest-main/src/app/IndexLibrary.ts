@@ -40,10 +40,11 @@ export default class IndexLibrary {
     set_limit = (limit: number) => {
         this.limit = limit;
     }
-
+/*
     App_set_point =(point: number) => {
         this.app?.change_face(point, this.limit);
     }
+    */
 
     App_EstimatePreference = (preference: string) =>{
         this.app?.EstimateChangeFace(preference);
@@ -56,6 +57,10 @@ export default class IndexLibrary {
     App_StopSpeak(){
         this.app?.MyCanvasStopSpeak();
     } 
+
+    ChangeFace=(expression: string)=>{
+        this.app?.change_face(expression);
+    }
 }
 
 //http://localhost:40080
