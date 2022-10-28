@@ -23,7 +23,7 @@
 		},
 		{
 			"Id": "ParamMouthOpenY",
-			"Value": 0.527,
+			"Value": 0,
 			"Blend": "Add"
 		}
 	]
