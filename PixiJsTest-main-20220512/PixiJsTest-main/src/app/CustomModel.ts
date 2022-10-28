@@ -180,6 +180,8 @@ export class CustomModel extends EventEmitter {
 
                 this.model.position.set(this.boxWidth / 2 + this.modelX, this.boxHeight / 2 + this.modelY);
                 console.log(`このモデルの高さは${this.model.height}、横幅は${this.model.width}`);
+                //モデル表示感知用
+                $("#agent_visible_flag").html("1");
                 this.modelHitArea.visible = false;
                 this.model?.addChild(this.modelHitArea);
                 this.container.addChild(this.model);
