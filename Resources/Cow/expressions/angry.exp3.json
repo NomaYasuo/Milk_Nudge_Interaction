@@ -3,13 +3,13 @@
 	"Parameters": [
 		{
 			"Id": "ParamEyeLOpen",
-			"Value": -1,
-			"Blend": "Add"
+			"Value": -0.695,
+			"Blend": "Overwrite"
 		},
 		{
 			"Id": "ParamEyeROpen",
-			"Value": -1,
-			"Blend": "Add"
+			"Value": -0.665,
+			"Blend": "Overwrite"
 		}
 	]
 }
