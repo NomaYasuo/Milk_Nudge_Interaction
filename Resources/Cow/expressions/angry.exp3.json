@@ -3,8 +3,8 @@
 	"Parameters": [
 		{
 			"Id": "ParamEyeLOpen",
-			"Value": -0.521,
-			"Blend": "Add"
+			"Value": 0.479,
+			"Blend": "Overwrite"
 		},
 		{
 			"Id": "ParamEyeROpen",
