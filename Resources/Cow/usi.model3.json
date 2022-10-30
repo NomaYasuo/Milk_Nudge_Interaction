@@ -23,6 +23,10 @@
 			{
 				"Name": "angry2",
 				"File": "angry2.exp3.json"
+			},
+			{
+				"Name": "angry3",
+				"File": "angry3.exp3.json"
 			}
 		]
 	},
