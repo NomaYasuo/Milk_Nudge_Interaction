@@ -18,7 +18,11 @@
 			},
 			{
 				"Name": "angry",
-				"File": "expressions/angry.exp3.json"
+				"File": "expressions/angry2.exp3.json"
+			},
+			{
+				"Name": "angry2",
+				"File": "angry2.exp3.json"
 			}
 		]
 	},
