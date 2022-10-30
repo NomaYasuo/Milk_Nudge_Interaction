@@ -14,11 +14,15 @@
 			},
 			{
 				"Name": "happy",
-				"File": "expressions/happy1.exp3.json"
+				"File": "expressions/happy2.exp3.json"
 			},
 			{
 				"Name": "angry",
 				"File": "expressions/angry10.exp3.json"
+			},
+			{
+				"Name": "happy2",
+				"File": "happy2.exp3.json"
 			}
 		],
 		"Motions": {
@@ -27,7 +31,7 @@
 					"File": "motion/hiyori_m03.motion3.json"
 				}
 			],
-			"StartSpeak":[
+			"StartSpeak": [
 				{
 					"File": "motion/hiyori_m01.motion3.json",
 					"FadeInTime": 0.5,
