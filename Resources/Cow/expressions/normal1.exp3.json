@@ -4,7 +4,7 @@
 		{
 			"Id": "Smile",
 			"Value": 0,
-			"Blend": "Add"
+			"Blend": "Multiply"
 		}
 	]
 }
