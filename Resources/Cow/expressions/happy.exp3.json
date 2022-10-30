@@ -2,22 +2,22 @@
 	"Type": "Live2D Expression",
 	"Parameters": [
 		{
-			"Id": "ParamEyeLOpen",
-			"Value": 0,
-			"Blend": "Multiply"
-		},
-		{
 			"Id": "Smile",
 			"Value": 1,
 			"Blend": "Add"
 		},
 		{
-			"Id": "add",
+			"Id": "ParamMouthForm",
 			"Value": 1,
 			"Blend": "Add"
 		},
 		{
 			"Id": "ParamEyeROpen",
+			"Value": 0,
+			"Blend": "Multiply"
+		},
+		{
+			"Id": "ParamEyeLOpen",
 			"Value": 0,
 			"Blend": "Multiply"
 		}
