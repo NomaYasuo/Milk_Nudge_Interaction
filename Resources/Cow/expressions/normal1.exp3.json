@@ -3,13 +3,13 @@
 	"Parameters": [
 		{
 			"Id": "ParamEyeLOpen",
-			"Value": 0,
-			"Blend": "Add"
+			"Value": 1,
+			"Blend": "Multiply"
 		},
 		{
 			"Id": "ParamEyeROpen",
-			"Value": 0,
-			"Blend": "Add"
+			"Value": 1,
+			"Blend": "Multiply"
 		}
 	]
 }
