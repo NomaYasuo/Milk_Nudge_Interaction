@@ -4,12 +4,12 @@
 		{
 			"Id": "ParamEyeLOpen",
 			"Value": 0,
-			"Blend": "Overwrite"
+			"Blend": "Multiply"
 		},
 		{
 			"Id": "ParamEyeROpen",
 			"Value": 0,
-			"Blend": "Overwrite"
+			"Blend": "Multiply"
 		}
 	]
 }
