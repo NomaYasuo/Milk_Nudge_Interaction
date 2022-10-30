@@ -3,12 +3,12 @@
 	"Parameters": [
 		{
 			"Id": "ParamEyeLOpen",
-			"Value": -0.353,
+			"Value": -0.647,
 			"Blend": "Add"
 		},
 		{
 			"Id": "ParamEyeROpen",
-			"Value": -0.371,
+			"Value": -0.629,
 			"Blend": "Add"
 		},
 		{
@@ -19,6 +19,11 @@
 		{
 			"Id": "ParamMouthOpenY",
 			"Value": 0,
+			"Blend": "Add"
+		},
+		{
+			"Id": "ParamAngleX",
+			"Value": 30,
 			"Blend": "Add"
 		}
 	]
