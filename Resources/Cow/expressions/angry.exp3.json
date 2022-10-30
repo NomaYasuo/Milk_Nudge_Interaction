@@ -3,17 +3,17 @@
 	"Parameters": [
 		{
 			"Id": "ParamEyeLOpen",
-			"Value": -1,
+			"Value": -0.647,
 			"Blend": "Add"
 		},
 		{
 			"Id": "ParamEyeROpen",
-			"Value": -1,
+			"Value": -0.629,
 			"Blend": "Add"
 		},
 		{
 			"Id": "ParamMouthForm",
-			"Value": 0.317,
+			"Value": -1,
 			"Blend": "Add"
 		},
 		{
