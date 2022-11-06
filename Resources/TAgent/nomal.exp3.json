@@ -30,6 +30,11 @@
 			"Id": "ParamRegret",
 			"Value": 0,
 			"Blend": "Multiply"
+		},
+		{
+			"Id": "ParamHappy",
+			"Value": 0,
+			"Blend": "Multiply"
 		}
 	]
 }
