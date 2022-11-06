@@ -1,0 +1,30 @@
+{
+	"Type": "Live2D Expression",
+	"Parameters": [
+		{
+			"Id": "ParamSad",
+			"Value": 1,
+			"Blend": "Add"
+		},
+		{
+			"Id": "ParamMouth_Sad",
+			"Value": 1,
+			"Blend": "Add"
+		},
+		{
+			"Id": "ParamBrowR_Sad",
+			"Value": 0.455,
+			"Blend": "Overwrite"
+		},
+		{
+			"Id": "ParamBrowL_Sad",
+			"Value": 0.461,
+			"Blend": "Overwrite"
+		},
+		{
+			"Id": "ParamNeutral",
+			"Value": 1,
+			"Blend": "Add"
+		}
+	]
+}
