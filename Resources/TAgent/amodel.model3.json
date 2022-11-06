@@ -9,7 +9,7 @@
 		"DisplayInfo": "AModel.cdi3.json",
 		"Expressions": [
 			{
-				"Name": "normal",
+				"Name": "nomal",
 				"File": "nomal.exp3.json"
 			},
 			{
