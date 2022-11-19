@@ -468,7 +468,12 @@ export class CustomModel extends EventEmitter {
 
                         //TAgent(Shota)用
                         let paramMouth;
-                        if(internalModel.coreModel.getParameterValueById("ParamHappy") == 1){
+                        if(internalModel.coreModel.getParameterValueById("ParamNeutral") == 0){
+                            paramMouth = internalModel.coreModel.getParameterValueById("ParamMouth_Neutral");
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Neutral", -paramMouth, 1);
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Neutral", value, 0.8);
+                        } 
+                        else if(internalModel.coreModel.getParameterValueById("ParamHappy") == 1){
                             paramMouth = internalModel.coreModel.getParameterValueById("ParamMouth_Happy");
                             internalModel.coreModel.addParameterValueById("ParamMouth_Happy", -paramMouth, 1);
                             internalModel.coreModel.addParameterValueById("ParamMouth_Happy", value, 0.8);
