@@ -465,6 +465,48 @@ export class CustomModel extends EventEmitter {
 
                         internalModel.coreModel.addParameterValueById("ParamMouthOpenY", value, 0.8);
                         //console.log("口："+coreModel.getParameterValueById("ParamMouthOpenY"));
+
+                        //TAgent(Shota)用
+                        let paramMouth;
+                        if(internalModel.coreModel.getParameterValueById("ParamHappy") == 1){
+                            paramMouth = internalModel.coreModel.getParameterValueById("ParamMouth_Happy");
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Happy", -paramMouth, 1);
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Happy", value, 0.8);
+                        } 
+                        else if(internalModel.coreModel.getParameterValueById("ParamSad") == 1){
+                            paramMouth = internalModel.coreModel.getParameterValueById("ParamMouth_Sad");
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Sad", -paramMouth+0.1, 1);
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Sad", value, 0.08);
+                        }
+                        else if(internalModel.coreModel.getParameterValueById("ParamAnger") == 1){
+                            paramMouth = internalModel.coreModel.getParameterValueById("ParamMouth_Anger");
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Anger", -paramMouth+0.1, 1);
+                            if(paramMouth <= 0.4) {
+                                internalModel.coreModel.addParameterValueById("ParamMouth_Anger", value, 0.4);
+                            } else {
+                                internalModel.coreModel.addParameterValueById("ParamMouth_Anger", value, 0.8);
+                            }
+                        }
+                        else if(internalModel.coreModel.getParameterValueById("ParamSurprised") == 1){
+                            paramMouth = internalModel.coreModel.getParameterValueById("ParamMouth_Surprised");
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Surprised", -paramMouth, 1);
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Surprised", value, 0.8);
+                        }
+                        else if(internalModel.coreModel.getParameterValueById("ParamFear") == 1){
+                            paramMouth = internalModel.coreModel.getParameterValueById("ParamMouth_Fear");
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Fear", -paramMouth, 1);
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Fear", value, 0.8);
+                        }
+                        else if(internalModel.coreModel.getParameterValueById("ParamDisgust") == 1){
+                            paramMouth = internalModel.coreModel.getParameterValueById("ParamMouth_Disgust");
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Disgust", -paramMouth, 1);
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Disgust", value, 0.8);
+                        }
+                        else if(internalModel.coreModel.getParameterValueById("ParamRegret") == 1){
+                            paramMouth = internalModel.coreModel.getParameterValueById("ParamMouth_Regret");
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Regret", -paramMouth, 1);
+                            internalModel.coreModel.addParameterValueById("ParamMouth_Regret", value, 0.8);
+                        }
                     }
                     //ボリュームに基づく音声
                     else if (internalModel.lipSync === true && this.speakState === SpeakState.Voicing) {
