@@ -1,5 +1,7 @@
 {
 	"Type": "Live2D Expression",
+	"FadeInTime": 0.1,
+	"FadeOutTime": 0.1,
 	"Parameters": [
 		{
 			"Id": "ParamNeutral",
@@ -58,6 +60,11 @@
 		},
 		{
 			"Id": "ParamRegret",
+			"Value": 0,
+			"Blend": "Multiply"
+		},
+		{
+			"Id": "ParamHappy",
 			"Value": 0,
 			"Blend": "Multiply"
 		}

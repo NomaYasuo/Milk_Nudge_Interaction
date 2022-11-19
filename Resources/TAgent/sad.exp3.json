@@ -1,5 +1,7 @@
 {
 	"Type": "Live2D Expression",
+	"FadeInTime": 0.1,
+	"FadeOutTime": 0.1,
 	"Parameters": [
 		{
 			"Id": "ParamSad",
@@ -25,6 +27,36 @@
 			"Id": "ParamNeutral",
 			"Value": 1,
 			"Blend": "Add"
+		},
+		{
+			"Id": "ParamAnger",
+			"Value": 0,
+			"Blend": "Multiply"
+		},
+		{
+			"Id": "ParamSurprised",
+			"Value": 0,
+			"Blend": "Multiply"
+		},
+		{
+			"Id": "ParamFear",
+			"Value": 0,
+			"Blend": "Multiply"
+		},
+		{
+			"Id": "ParamDisgust",
+			"Value": 0,
+			"Blend": "Multiply"
+		},
+		{
+			"Id": "ParamRegret",
+			"Value": 0,
+			"Blend": "Multiply"
+		},
+		{
+			"Id": "ParamHappy",
+			"Value": 0,
+			"Blend": "Multiply"
 		}
 	]
 }
